@@ -109,14 +109,19 @@ def main(args):
 
 
 if __name__ == "__main__":
+    inter = '15min'
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--output_dir", type=str, default="data/", help="Output directory."
+        "--output_dir", type=str,
+        # default="../data/",
+        default="../langfang_data/{}/".format(inter),
+        help="Output directory."
     )
     parser.add_argument(
         "--traffic_df_filename",
         type=str,
-        default="data/df_highway_2012_4mon_sample.h5",
+        # default="../data/df_highway_2012_4mon_sample.h5",
+        default="../langfang_data/{}_data.h5".format(inter),
         help="Raw traffic readings.",
     )
     args = parser.parse_args()
